@@ -106,10 +106,15 @@ public class Main {
      * @return result of the command
      */
     private CommandResult executeCommand(Command command)  {
+        CommandResult result = null;
+
         try {
             command.setData(addressBook, lastShownList);
-            CommandResult result = command.execute();
+            result = command.execute();
             storage.save(addressBook);
+            return result;
+        } catch (StorageFile.StorageReadOnlyException e) {
+            ui.showToUser(e.getMessage());
             return result;
         } catch (Exception e) {
             ui.showToUser(e.getMessage());

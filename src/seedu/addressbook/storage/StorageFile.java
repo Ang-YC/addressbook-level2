@@ -52,6 +52,13 @@ public class StorageFile {
         }
     }
 
+    /**
+     * Signals that the given file is read only.
+     */
+    public static class StorageReadOnlyException extends StorageOperationException {
+        public StorageReadOnlyException(String message) { super(message); }
+    }
+
     private final JAXBContext jaxbContext;
 
     public final Path path;
@@ -106,7 +113,7 @@ public class StorageFile {
             marshaller.marshal(toSave, fileWriter);
 
         } catch (IOException ioe) {
-            throw new StorageOperationException("Error writing to file: " + path);
+            throw new StorageReadOnlyException("Error writing to file: " + path + ". The file is read only.");
         } catch (JAXBException jaxbe) {
             throw new StorageOperationException("Error converting address book into storage format");
         }

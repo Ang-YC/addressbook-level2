@@ -130,7 +130,7 @@ public class UniquePersonList implements Iterable<Person> {
     }
 
     public void sort() {
-        // TODO: Sort the address book in ascending order, order by name
+        Collections.sort(internalList);
     }
 
     @Override

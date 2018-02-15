@@ -14,6 +14,7 @@ import org.junit.Test;
 
 import seedu.addressbook.commands.AddCommand;
 import seedu.addressbook.commands.ClearCommand;
+import seedu.addressbook.commands.SortCommand;
 import seedu.addressbook.commands.Command;
 import seedu.addressbook.commands.DeleteCommand;
 import seedu.addressbook.commands.ExitCommand;
@@ -74,6 +75,12 @@ public class ParserTest {
     public void parse_clearCommand_parsedCorrectly() {
         final String input = "clear";
         parseAndAssertCommandType(input, ClearCommand.class);
+    }
+
+    @Test
+    public void parse_sortCommand_parsedCorrectly() {
+        final String input = "sort";
+        parseAndAssertCommandType(input, SortCommand.class);
     }
 
     @Test

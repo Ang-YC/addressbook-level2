@@ -9,7 +9,7 @@ public class History {
     private static int nextSequenceNum = 0;
 
     History(String rawCommand) {
-        this.rawCommand = rawCommand;
+        this.rawCommand = rawCommand.trim();
         this.sequenceNum = ++nextSequenceNum;
     }
 

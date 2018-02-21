@@ -324,6 +324,82 @@
 || 
 || 4 persons listed!
 || ===================================================
+|| Enter command: || [Command entered:  history]
+|| 1. sfdfd
+|| 2. delete 1
+|| 3. view 1
+|| 4. viewall 1
+|| 5. clear
+|| 6. list
+|| 7. add wrong args wrong args
+|| 8. add Valid Name 12345 e/valid@email.butNoPhonePrefix a/valid, address
+|| 9. add Valid Name p/12345 valid@email.butNoPrefix a/valid, address
+|| 10. add Valid Name p/12345 e/valid@email.butNoAddressPrefix valid, address
+|| 11. add Valid Name p/12345 e/valid@email.butNoTagPrefix a/valid, address t/goodTag noPrefixTag
+|| 12. add []\[;] p/12345 e/valid@e.mail a/valid, address
+|| 13. add Valid Name p/not_numbers e/valid@e.mail a/valid, address
+|| 14. add Valid Name p/12345 e/notAnEmail a/valid, address
+|| 15. add Valid Name p/12345 e/valid@e.mail a/valid, address t/invalid_-[.tag
+|| 16. add Adam Brown p/111111 e/adam@gmail.com a/111, alpha street
+|| 17. list
+|| 18. add Betsy Choo pp/222222 pe/benchoo@nus.edu.sg pa/222, beta street t/secretive
+|| 19. list
+|| 20. add Charlie Dickson pp/333333 e/charlie.d@nus.edu.sg a/333, gamma street t/friends t/school
+|| 21. list
+|| 22. add Dickson Ee p/444444 pe/dickson@nus.edu.sg a/444, delta street t/friends
+|| 23. list
+|| 24. add Esther Potato p/555555 e/esther@not.a.real.potato pa/555, epsilon street t/tubers t/starchy
+|| 25. list
+|| 26. add Esther Potato p/555555 e/esther@not.a.real.potato pa/555, epsilon street t/tubers t/starchy
+|| 27. view
+|| 28. viewall
+|| 29. view should be only one number
+|| 30. viewall should only be one number
+|| 31. view -1
+|| 32. view 0
+|| 33. view 6
+|| 34. viewall -1
+|| 35. viewall 0
+|| 36. viewall 6
+|| 37. view 1
+|| 38. viewall 1
+|| 39. view 3
+|| 40. view 4
+|| 41. view 5
+|| 42. viewall 3
+|| 43. viewall 4
+|| 44. viewall 5
+|| 45. find
+|| 46. find bet
+|| 47. find 23912039120
+|| 48. find betsy
+|| 49. find Betsy
+|| 50. find Dickson
+|| 51. find Charlie Betsy
+|| 52. delete
+|| 53. delete should be only one number
+|| 54. delete -1
+|| 55. delete 0
+|| 56. delete 3
+|| 57. delete 2
+|| 58. delete 2
+|| 59. view 2
+|| 60. viewall 2
+|| 61. list
+|| 62. delete 4
+|| 63. list
+|| 64. delete 1
+|| 65. list
+|| 66. clear
+|| 67. list
+|| 68. add Dickson Ee p/444444 pe/dickson@nus.edu.sg a/444, delta street t/friends
+|| 69. add Betsy Choo pp/222222 pe/benchoo@nus.edu.sg pa/222, beta street t/secretive
+|| 70. add Adam Brown p/111111 e/adam@gmail.com a/111, alpha street
+|| 71. add Charlie Dickson pp/333333 e/charlie.d@nus.edu.sg a/333, gamma street t/friends t/school
+|| 72. sort
+|| 73. list
+|| 74. history
+|| ===================================================
 || Enter command: || [Command entered:  exit]
 || Exiting Address Book as requested ...
 || ===================================================

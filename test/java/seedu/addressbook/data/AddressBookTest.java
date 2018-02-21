@@ -35,6 +35,8 @@ public class AddressBookTest {
 
     private AddressBook defaultAddressBook;
     private AddressBook emptyAddressBook;
+    private AddressBook unsortedAddressBook;
+    private AddressBook sortedAddressBook;
 
 
     @Before
@@ -71,6 +73,13 @@ public class AddressBookTest {
         emptyAddressBook = new AddressBook();
         defaultAddressBook = new AddressBook(new UniquePersonList(aliceBetsy, bobChaplin),
                                              new UniqueTagList(tagMathematician, tagScientist));
+
+        // Setup unsorted address book
+        unsortedAddressBook = new AddressBook(new UniquePersonList(bobChaplin, charlieDouglas, aliceBetsy),
+                                              new UniqueTagList());
+        // Setup unsorted address book
+        sortedAddressBook = new AddressBook(new UniquePersonList(aliceBetsy, bobChaplin, charlieDouglas),
+                                            new UniqueTagList());
     }
 
     @Rule
@@ -163,14 +172,11 @@ public class AddressBookTest {
     }
 
     @Test
-    public void sort() throws Exception {
-        // Setup address book
-        emptyAddressBook.addPerson(bobChaplin);
-        emptyAddressBook.addPerson(charlieDouglas);
-        emptyAddressBook.addPerson(aliceBetsy);
-        emptyAddressBook.sort();
-        UniquePersonList allPersons = emptyAddressBook.getAllPersons();
-        UniquePersonList personsToCheck = new UniquePersonList(aliceBetsy, bobChaplin, charlieDouglas);
+    public void sort_sortPerson_personSorted() throws Exception {
+        unsortedAddressBook.sort();
+
+        UniquePersonList allPersons = unsortedAddressBook.getAllPersons();
+        UniquePersonList personsToCheck = sortedAddressBook.getAllPersons();
 
         assertTrue(isIdentical(allPersons, personsToCheck));
     }

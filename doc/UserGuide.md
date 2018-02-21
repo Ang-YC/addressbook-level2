@@ -119,6 +119,11 @@ Format: `clear`
 Sorts the address book in alphabetically ascending order, order by the name of the person.<br>
 Format: `sort`
 
+### Show command history : `history`
+Show all command entered in current session, doesn't persist after exiting the program.<br>
+Both valid and invalid commands are recorded.<br>
+Format: `history`
+
 #### Exiting the program : `exit`
 Exits the program.<br>
 Format: `exit`  

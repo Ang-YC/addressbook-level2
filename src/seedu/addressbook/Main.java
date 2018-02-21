@@ -8,6 +8,7 @@ import seedu.addressbook.commands.Command;
 import seedu.addressbook.commands.CommandResult;
 import seedu.addressbook.commands.ExitCommand;
 import seedu.addressbook.data.AddressBook;
+import seedu.addressbook.data.history.HistoryList;
 import seedu.addressbook.data.person.ReadOnlyPerson;
 import seedu.addressbook.parser.Parser;
 import seedu.addressbook.storage.StorageFile;
@@ -28,6 +29,7 @@ public class Main {
     private TextUi ui;
     private StorageFile storage;
     private AddressBook addressBook;
+    private HistoryList historyList;
 
     /** The list of person shown to the user most recently.  */
     private List<? extends ReadOnlyPerson> lastShownList = Collections.emptyList();
@@ -55,6 +57,7 @@ public class Main {
             this.ui = new TextUi();
             this.storage = initializeStorage(launchArgs);
             this.addressBook = storage.load();
+            this.historyList = new HistoryList();
             ui.showWelcomeMessage(VERSION, storage.getPath());
 
         } catch (InvalidStorageFilePathException | StorageOperationException e) {
@@ -83,6 +86,7 @@ public class Main {
         Command command;
         do {
             String userCommandText = ui.getUserCommand();
+            historyList.addHistory(userCommandText);
             command = new Parser().parseCommand(userCommandText);
             CommandResult result = executeCommand(command);
             recordResult(result);
@@ -107,7 +111,7 @@ public class Main {
      */
     private CommandResult executeCommand(Command command)  {
         try {
-            command.setData(addressBook, lastShownList);
+            command.setData(addressBook, lastShownList, historyList);
             CommandResult result = command.execute();
             storage.save(addressBook);
             return result;

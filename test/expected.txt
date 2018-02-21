@@ -16,6 +16,8 @@
 || Example: clear
 || Sorts the address book in alphabetically ascending order, order by the name of the person.
 || Example: sort
+|| Show command history in current session.
+|| Example: history
 || find: Finds all persons whose names contain any of the specified keywords (case-sensitive) and displays them as a list with index numbers.
 || Parameters: KEYWORD [MORE_KEYWORDS]...
 || Example: find alice bob charlie

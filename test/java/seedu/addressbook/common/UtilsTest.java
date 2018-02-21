@@ -34,7 +34,7 @@ public class UtilsTest {
         // None null
         assertNoneNull("a", 1);
         assertNoneNull("a", array);
-        assertNoneNull("a", "a", "a");
+        assertNoneNull("a", "a", 1, "a");
     }
 
     private void assertAnyNull(Object... items) {
